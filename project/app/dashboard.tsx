@@ -694,7 +694,17 @@ const Dashboard = () => {
           <Ionicons name="home" size={28} color={activeTab === 'All' ? '#4299e1' : '#718096'} />
           <Text style={[styles.navLabel, activeTab === 'All' && styles.activeNavLabel]}>Home</Text>
         </TouchableOpacity>
-        <TouchableOpacity style={styles.navItem} onPress={() => router.push('/chat')}>
+        <TouchableOpacity 
+          style={styles.navItem} 
+          onPress={() => {
+            console.log('Chat button pressed');
+            try {
+              Alert.alert('Coming Soon', 'Chat feature is not implemented yet. Coming soon!');
+            } catch (error) {
+              console.error('Alert error:', error);
+            }
+          }}
+        >
           <Ionicons name="chatbubble-ellipses" size={28} color="#718096" />
           <Text style={styles.navLabel}>Chat</Text>
         </TouchableOpacity>

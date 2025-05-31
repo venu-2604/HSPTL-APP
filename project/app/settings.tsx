@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, TouchableOpacity, StyleSheet, SafeAreaView, ScrollView } from 'react-native';
+import { View, Text, TouchableOpacity, StyleSheet, SafeAreaView, ScrollView, Alert } from 'react-native';
 import { Ionicons, MaterialIcons } from '@expo/vector-icons';
 import { useRouter } from 'expo-router';
 
@@ -39,7 +39,17 @@ const Settings = () => {
           <Ionicons name="home" size={28} color="#718096" />
           <Text style={styles.navLabel}>Home</Text>
         </TouchableOpacity>
-        <TouchableOpacity style={styles.navItem} onPress={() => router.push('/chat')}>
+        <TouchableOpacity 
+          style={styles.navItem} 
+          onPress={() => {
+            console.log('Chat button pressed');
+            try {
+              Alert.alert('Coming Soon', 'Chat feature is not implemented yet. Coming soon!');
+            } catch (error) {
+              console.error('Alert error:', error);
+            }
+          }}
+        >
           <Ionicons name="chatbubble-ellipses" size={28} color="#718096" />
           <Text style={styles.navLabel}>Chat</Text>
         </TouchableOpacity>
